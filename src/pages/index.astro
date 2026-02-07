@@ -1,0 +1,246 @@
+---
+import Layout from '../layouts/Layout.astro';
+import '../styles/global.css';
+---
+
+<Layout title="Food Flow - Modern Landing Page">
+  <main>
+    <!-- Hero Section -->
+    <section
+      class="relative flex min-h-screen items-center justify-center bg-gradient-to-br from-primary-50 via-white to-secondary-50"
+    >
+      <div class="container-custom py-20 lg:py-32">
+        <div class="mx-auto max-w-4xl animate-fade-in text-center">
+          <h1
+            class="mb-6 font-heading text-4xl font-bold text-gray-900 sm:text-5xl md:text-6xl lg:text-7xl"
+          >
+            Welcome to <span
+              class="bg-gradient-to-r from-primary-600 to-secondary-600 bg-clip-text text-transparent"
+              >Food Flow</span
+            >
+          </h1>
+          <p class="mx-auto mb-8 max-w-2xl text-lg text-gray-600 sm:text-xl md:text-2xl">
+            A modern, responsive landing page built with the latest technologies for an
+            exceptional user experience.
+          </p>
+          <div class="flex flex-col items-center justify-center gap-4 sm:flex-row">
+            <button class="btn-primary w-full sm:w-auto"> Get Started </button>
+            <button class="btn-outline w-full sm:w-auto"> Learn More </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="bg-white py-20 lg:py-32">
+      <div class="container-custom">
+        <div class="mb-16 text-center">
+          <h2
+            class="mb-4 font-heading text-3xl font-bold text-gray-900 sm:text-4xl md:text-5xl"
+          >
+            Features
+          </h2>
+          <p class="mx-auto max-w-2xl text-lg text-gray-600">
+            Built with modern technologies and best practices
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
+          <!-- Feature 1 -->
+          <div
+            class="rounded-2xl bg-gradient-to-br from-primary-50 to-white p-6 transition-shadow duration-300 hover:shadow-xl"
+          >
+            <div
+              class="mb-4 flex h-12 w-12 items-center justify-center rounded-lg bg-primary-600"
+            >
+              <svg
+                class="h-6 w-6 text-white"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+              </svg>
+            </div>
+            <h3 class="mb-2 font-heading text-xl font-bold text-gray-900">
+              Lightning Fast
+            </h3>
+            <p class="text-gray-600">
+              Built with Astro for optimal performance and speed
+            </p>
+          </div>
+
+          <!-- Feature 2 -->
+          <div
+            class="rounded-2xl bg-gradient-to-br from-secondary-50 to-white p-6 transition-shadow duration-300 hover:shadow-xl"
+          >
+            <div
+              class="mb-4 flex h-12 w-12 items-center justify-center rounded-lg bg-secondary-600"
+            >
+              <svg
+                class="h-6 w-6 text-white"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z"
+                ></path>
+              </svg>
+            </div>
+            <h3 class="mb-2 font-heading text-xl font-bold text-gray-900">
+              Fully Responsive
+            </h3>
+            <p class="text-gray-600">
+              Optimized for all screen sizes from mobile to 4K displays
+            </p>
+          </div>
+
+          <!-- Feature 3 -->
+          <div
+            class="rounded-2xl bg-gradient-to-br from-primary-50 to-white p-6 transition-shadow duration-300 hover:shadow-xl"
+          >
+            <div
+              class="mb-4 flex h-12 w-12 items-center justify-center rounded-lg bg-primary-600"
+            >
+              <svg
+                class="h-6 w-6 text-white"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path>
+              </svg>
+            </div>
+            <h3 class="mb-2 font-heading text-xl font-bold text-gray-900">TypeScript</h3>
+            <p class="text-gray-600">
+              Type-safe development with full TypeScript support
+            </p>
+          </div>
+
+          <!-- Feature 4 -->
+          <div
+            class="rounded-2xl bg-gradient-to-br from-secondary-50 to-white p-6 transition-shadow duration-300 hover:shadow-xl"
+          >
+            <div
+              class="mb-4 flex h-12 w-12 items-center justify-center rounded-lg bg-secondary-600"
+            >
+              <svg
+                class="h-6 w-6 text-white"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01"
+                ></path>
+              </svg>
+            </div>
+            <h3 class="mb-2 font-heading text-xl font-bold text-gray-900">
+              Tailwind CSS
+            </h3>
+            <p class="text-gray-600">
+              Beautiful, utility-first styling with custom theme
+            </p>
+          </div>
+
+          <!-- Feature 5 -->
+          <div
+            class="rounded-2xl bg-gradient-to-br from-primary-50 to-white p-6 transition-shadow duration-300 hover:shadow-xl"
+          >
+            <div
+              class="mb-4 flex h-12 w-12 items-center justify-center rounded-lg bg-primary-600"
+            >
+              <svg
+                class="h-6 w-6 text-white"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"
+                ></path>
+              </svg>
+            </div>
+            <h3 class="mb-2 font-heading text-xl font-bold text-gray-900">
+              Modern Design
+            </h3>
+            <p class="text-gray-600">Clean, contemporary UI with smooth animations</p>
+          </div>
+
+          <!-- Feature 6 -->
+          <div
+            class="rounded-2xl bg-gradient-to-br from-secondary-50 to-white p-6 transition-shadow duration-300 hover:shadow-xl"
+          >
+            <div
+              class="mb-4 flex h-12 w-12 items-center justify-center rounded-lg bg-secondary-600"
+            >
+              <svg
+                class="h-6 w-6 text-white"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z"
+                ></path>
+              </svg>
+            </div>
+            <h3 class="mb-2 font-heading text-xl font-bold text-gray-900">Bun Runtime</h3>
+            <p class="text-gray-600">Ultra-fast package management and build times</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="bg-gradient-to-br from-primary-600 to-secondary-600 py-20 lg:py-32">
+      <div class="container-custom text-center">
+        <h2
+          class="mb-6 font-heading text-3xl font-bold text-white sm:text-4xl md:text-5xl"
+        >
+          Ready to Get Started?
+        </h2>
+        <p class="mx-auto mb-8 max-w-2xl text-lg text-primary-100 sm:text-xl">
+          Start building your next project with this modern tech stack
+        </p>
+        <button
+          class="rounded-lg bg-white px-8 py-4 text-lg font-bold text-primary-600 transition-colors duration-200 hover:bg-gray-100"
+        >
+          Start Building
+        </button>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 py-12">
+      <div class="container-custom text-center">
+        <p class="text-gray-400">
+          Built with <span class="text-red-500">♥</span> using Astro, TypeScript, Tailwind CSS,
+          and Bun
+        </p>
+        <p class="mt-2 text-sm text-gray-500">© 2026 Food Flow. All rights reserved.</p>
+      </div>
+    </footer>
+  </main>
+</Layout>

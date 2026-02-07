@@ -1,0 +1,32 @@
+{
+  "$schema": "https://raw.githubusercontent.com/oxc-project/oxc/main/npm/oxlint/configuration_schema.json",
+  "rules": {
+    "typescript": "warn",
+    "react": "off",
+    "unicorn": "warn",
+    "import": "warn",
+    "jsdoc": "off",
+    "jest": "off",
+    "vitest": "off",
+    "jsx-a11y": "warn",
+    "nextjs": "off",
+    "react-perf": "off"
+  },
+  "overrides": [
+    {
+      "files": ["src/env.d.ts"],
+      "rules": {
+        "typescript": "off"
+      }
+    }
+  ],
+  "ignorePatterns": [
+    "node_modules",
+    "dist",
+    ".astro",
+    "*.config.js",
+    "*.config.mjs",
+    "*.config.ts",
+    "src/env.d.ts"
+  ]
+}
