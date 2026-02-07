@@ -1,0 +1,21 @@
+---
+interface Props {
+  title?: string;
+  gradient?: 'primary' | 'secondary';
+  class?: string;
+}
+
+const { title, gradient = 'primary', class: className = '' } = Astro.props;
+
+const gradientClasses = {
+  primary: 'from-primary-50 to-white',
+  secondary: 'from-secondary-50 to-white',
+};
+
+const classes = `p-6 bg-gradient-to-br ${gradientClasses[gradient]} rounded-2xl hover:shadow-xl transition-shadow duration-300 ${className}`;
+---
+
+<div class={classes}>
+  {title && <h3 class="mb-2 font-heading text-xl font-bold text-gray-900">{title}</h3>}
+  <slot />
+</div>
