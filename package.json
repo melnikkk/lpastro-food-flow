@@ -14,7 +14,10 @@
     "lint:fix": "oxlint --fix"
   },
   "dependencies": {
-    "astro": "^5.17.1"
+    "@astrojs/cloudflare": "^12.6.12",
+    "astro": "^5.17.1",
+    "google-auth-library": "^10.5.0",
+    "google-spreadsheet": "^5.0.2"
   },
   "devDependencies": {
     "@astrojs/check": "^0.9.4",

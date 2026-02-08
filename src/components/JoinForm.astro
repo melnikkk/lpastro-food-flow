@@ -1,24 +1,113 @@
-<form class="mt-3 space-y-3 max-w-sm">
+<form id="join-waitlist-form" class="mt-3 max-w-sm space-y-3">
   <label class="block">
     <span class="sr-only">Name</span>
     <input
-      class="w-full rounded-full bg-white px-4 py-2.5 sm:py-2 text-sm sm:text-xs text-gray-800 placeholder:text-gray-500 focus:outline-none focus:ring-2 focus:ring-secondary-400 transition-shadow"
+      id="name-input"
+      class="w-full rounded-full bg-white px-4 py-2.5 text-sm text-gray-800 transition-shadow placeholder:text-gray-500 focus:outline-none focus:ring-2 focus:ring-secondary-400 sm:py-2 sm:text-xs"
       type="text"
       placeholder="Name"
+      name="name"
     />
+    <span id="name-error" class="mt-1 block text-xs text-red-500"></span>
   </label>
   <label class="block">
     <span class="sr-only">Email Address</span>
     <input
-      class="w-full rounded-full bg-white px-4 py-2.5 sm:py-2 text-sm sm:text-xs text-gray-800 placeholder:text-gray-500 focus:outline-none focus:ring-2 focus:ring-secondary-400 transition-shadow"
+      id="email-input"
+      class="w-full rounded-full bg-white px-4 py-2.5 text-sm text-gray-800 transition-shadow placeholder:text-gray-500 focus:outline-none focus:ring-2 focus:ring-secondary-400 sm:py-2 sm:text-xs"
       type="email"
       placeholder="Email Address"
+      name="email"
     />
+    <span id="email-error" class="mt-1 block text-xs text-red-500"></span>
   </label>
   <button
+    id="join-waitlist-button"
     type="submit"
-    class="w-full rounded-full bg-secondary-300 px-4 py-2.5 sm:py-2 text-sm sm:text-xs font-semibold text-primary-900 hover:bg-secondary-400 active:bg-secondary-500 transition-colors"
+    class="w-full rounded-full bg-secondary-300 px-4 py-2.5 text-sm font-semibold text-primary-900 transition-colors hover:bg-secondary-400 active:bg-secondary-500 disabled:cursor-not-allowed disabled:opacity-50 sm:py-2 sm:text-xs"
   >
-    Join the Waitlist
+    <span id="button-text">Join the Waitlist</span>
+    <span id="button-loading" class="hidden">Joining...</span>
   </button>
+  <p id="message-display" class="text-center text-sm"></p>
 </form>
+
+<script>
+  import { actions, isInputError } from 'astro:actions';
+
+  const form = document.getElementById('join-waitlist-form') as HTMLFormElement;
+  const button = document.getElementById('join-waitlist-button') as HTMLButtonElement;
+  const buttonText = document.getElementById('button-text') as HTMLSpanElement;
+  const buttonLoading = document.getElementById('button-loading') as HTMLSpanElement;
+  const messageDisplay = document.getElementById(
+    'message-display',
+  ) as HTMLParagraphElement;
+  const nameError = document.getElementById('name-error') as HTMLSpanElement;
+  const emailError = document.getElementById('email-error') as HTMLSpanElement;
+
+  const clearErrors = () => {
+    nameError.textContent = '';
+    emailError.textContent = '';
+    messageDisplay.textContent = '';
+    messageDisplay.className = 'text-center text-sm';
+  };
+
+  const setLoading = (isLoading: boolean) => {
+    button.disabled = isLoading;
+    if (isLoading) {
+      buttonText.classList.add('hidden');
+      buttonLoading.classList.remove('hidden');
+    } else {
+      buttonText.classList.remove('hidden');
+      buttonLoading.classList.add('hidden');
+    }
+  };
+
+  form?.addEventListener('submit', async (event) => {
+    event.preventDefault();
+    clearErrors();
+    setLoading(true);
+
+    try {
+      const formData = new FormData(form);
+      const { data, error } = await actions.joinWaitlist(formData);
+
+      if (error) {
+        if (isInputError(error)) {
+          if (error.fields.name) {
+            nameError.textContent = error.fields.name.join(', ');
+          }
+
+          if (error.fields.email) {
+            emailError.textContent = error.fields.email.join(', ');
+          }
+        } else {
+          const errorMessage =
+            error.message || 'Something went wrong. Please try again later.';
+
+          if (error.code === 'CONFLICT') {
+            messageDisplay.textContent = errorMessage;
+            messageDisplay.className = 'text-center text-sm text-yellow-600';
+          } else {
+            messageDisplay.textContent = errorMessage;
+            messageDisplay.className = 'text-center text-sm text-red-500';
+          }
+        }
+
+        setLoading(false);
+      } else {
+        button.disabled = true;
+        buttonText.textContent = data.message;
+        buttonText.classList.remove('hidden');
+        buttonLoading.classList.add('hidden');
+        form.reset();
+      }
+    } catch (error) {
+      messageDisplay.textContent =
+        'Network error. Please check your connection and try again.';
+      messageDisplay.className = 'text-center text-sm text-red-500';
+
+      setLoading(false);
+    }
+  });
+</script>
