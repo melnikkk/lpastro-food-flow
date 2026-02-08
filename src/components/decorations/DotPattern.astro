@@ -1,0 +1,17 @@
+---
+// Dot pattern decoration
+interface Props {
+  class?: string;
+}
+
+const { class: className } = Astro.props;
+---
+
+<svg class={className} viewBox="0 0 48 40">
+  <circle cx="6" cy="8" r="3.2" fill="#a3c17f"></circle>
+  <circle cx="18" cy="4" r="3.2" fill="#a3c17f"></circle>
+  <circle cx="30" cy="10" r="3.2" fill="#a3c17f"></circle>
+  <circle cx="10" cy="22" r="3.2" fill="#a3c17f"></circle>
+  <circle cx="22" cy="20" r="3.2" fill="#a3c17f"></circle>
+  <circle cx="34" cy="24" r="3.2" fill="#a3c17f"></circle>
+</svg>
