@@ -1,0 +1,12 @@
+---
+// Star icon decoration
+interface Props {
+  class?: string;
+}
+
+const { class: className } = Astro.props;
+---
+
+<svg class={className} viewBox="0 0 40 40">
+  <path d="M20 2L23 12L34 20L23 28L20 38L17 28L6 20L17 12Z" fill="#f2c94c"></path>
+</svg>

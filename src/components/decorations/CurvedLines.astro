@@ -1,0 +1,23 @@
+---
+// Curved lines decoration (yellow or green variants)
+interface Props {
+  class?: string;
+  variant?: 'yellow' | 'green';
+}
+
+const { class: className, variant = 'yellow' } = Astro.props;
+
+const colors =
+  variant === 'yellow'
+    ? ['#f2c94c', '#f2e8b0', '#e6d574']
+    : ['#a3c17f', '#b9d199', '#d3e2b8'];
+---
+
+<svg class={className} viewBox="120 120">
+  <path d="M10 110C10 60 60 10 110 10" stroke={colors[0]} stroke-width="14" fill="none"
+  ></path>
+  <path d="M30 110C30 70 70 30 110 30" stroke={colors[1]} stroke-width="14" fill="none"
+  ></path>
+  <path d="M50 110C50 80 80 50 110 50" stroke={colors[2]} stroke-width="14" fill="none"
+  ></path>
+</svg>
