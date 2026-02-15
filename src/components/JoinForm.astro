@@ -1,9 +1,9 @@
-<form id="join-waitlist-form" class="mt-3 max-w-sm space-y-3">
+<form id="join-waitlist-form" class="mt-3 flex max-w-sm flex-col gap-2 sm:gap-3">
   <label class="block">
     <span class="sr-only">Name</span>
     <input
       id="name-input"
-      class="w-full rounded-full bg-white px-4 py-2.5 text-sm text-gray-800 transition-shadow placeholder:text-gray-500 focus:outline-none focus:ring-2 focus:ring-secondary-400 sm:py-2 sm:text-xs"
+      class="h-10 w-full rounded-lg border-none bg-white px-4 text-sm text-foreground shadow-sm placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-secondary sm:h-12"
       type="text"
       placeholder="Name"
       name="name"
@@ -14,7 +14,7 @@
     <span class="sr-only">Email Address</span>
     <input
       id="email-input"
-      class="w-full rounded-full bg-white px-4 py-2.5 text-sm text-gray-800 transition-shadow placeholder:text-gray-500 focus:outline-none focus:ring-2 focus:ring-secondary-400 sm:py-2 sm:text-xs"
+      class="h-10 w-full rounded-lg border-none bg-white px-4 text-sm text-foreground shadow-sm placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-secondary sm:h-12"
       type="email"
       placeholder="Email Address"
       name="email"
@@ -24,7 +24,7 @@
   <button
     id="join-waitlist-button"
     type="submit"
-    class="w-full rounded-full bg-secondary-300 px-4 py-2.5 text-sm font-semibold text-primary-900 transition-colors hover:bg-secondary-400 active:bg-secondary-500 disabled:cursor-not-allowed disabled:opacity-50 sm:py-2 sm:text-xs"
+    class="h-10 w-full rounded-lg bg-secondary px-4 text-sm font-bold text-secondary-foreground shadow-md transition-transform hover:scale-[1.02] hover:bg-secondary/90 active:bg-secondary/80 disabled:cursor-not-allowed disabled:opacity-50 sm:h-12 sm:text-base"
   >
     <span id="button-text">Join the Waitlist</span>
     <span id="button-loading" class="hidden">Joining...</span>

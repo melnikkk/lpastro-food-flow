@@ -1,0 +1,33 @@
+---
+interface Props {
+  class?: string;
+}
+
+const { class: className, ...rest } = Astro.props;
+---
+
+<svg
+  class:list={className}
+  width="80"
+  height="60"
+  viewBox="0 0 80 60"
+  fill="none"
+  xmlns="http://www.w3.org/2000/svg"
+  {...rest}
+>
+  <path
+    d="M5 55C5 30 25 10 50 10"
+    stroke="hsl(45 95% 55%)"
+    stroke-width="6"
+    stroke-linecap="round"></path>
+  <path
+    d="M5 45C5 25 20 10 40 10"
+    stroke="hsl(45 95% 55% / 0.6)"
+    stroke-width="5"
+    stroke-linecap="round"></path>
+  <path
+    d="M5 35C5 20 15 10 30 10"
+    stroke="hsl(45 95% 55% / 0.3)"
+    stroke-width="4"
+    stroke-linecap="round"></path>
+</svg>
