@@ -1,88 +1,78 @@
 ---
 import JoinForm from '@/components/JoinForm.astro';
 import Navigation from '@/components/Navigation.astro';
+import CurvedBottomEdge from '@/components/decorations/CurvedBottomEdge.astro';
 import CurvedLines from '@/components/decorations/CurvedLines.astro';
-import DotPattern from '@/components/decorations/DotPattern.astro';
-import HorizontalBars from '@/components/decorations/HorizontalBars.astro';
-import StarIcon from '@/components/decorations/StarIcon.astro';
-import WavySeparator from '@/components/decorations/WavySeparator.astro';
+import CurvedRightEdge from '@/components/decorations/CurvedRightEdge.astro';
+import DecorativeDots from '@/components/decorations/DecorativeDots.astro';
+import Sparkles from '@/components/decorations/Sparkles.astro';
+import YellowCurves from '@/components/decorations/YellowCurves.astro';
 ---
 
-<section class="relative overflow-hidden bg-white">
-  <div class="absolute inset-0 flex">
-    <div class="relative w-full bg-primary-600 lg:w-[44%]"></div>
+<div class="relative flex min-h-screen flex-col lg:flex-row">
+  <section
+    class="relative z-10 flex min-h-[60vh] flex-1 flex-col justify-center bg-gradient-to-br from-[hsl(100,65%,40%)] to-[hsl(120,50%,30%)] px-6 py-10 sm:px-8 md:px-16 lg:min-h-screen lg:px-20"
+    aria-label="Hero content"
+  >
+    <CurvedRightEdge aria-hidden="true" />
+    <CurvedBottomEdge aria-hidden="true" />
+    <DecorativeDots class="absolute left-6 top-6" aria-hidden="true" />
+    <YellowCurves
+      class="pointer-events-none absolute bottom-8 left-8 rotate-[270deg]"
+      aria-hidden="true"
+    />
 
-    <WavySeparator class="hidden lg:block" />
-  </div>
+    <article class="relative z-10 max-w-lg">
+      <p class="mb-2 text-lg font-bold text-white">Food Decision Engine</p>
+      <h1
+        class="mb-3 font-heading text-3xl font-extrabold leading-tight text-white sm:text-4xl md:text-5xl lg:text-6xl"
+      >
+        Plan Your<br />
+        Meals Smart
+      </h1>
+      <p class="text-secondary mb-2 text-lg font-semibold">Recipe & Menu Engine</p>
 
-  <div class="relative z-10 flex min-h-screen flex-col lg:flex-row">
-    <div
-      class="relative flex w-full flex-col px-6 py-8 text-white sm:px-12 sm:py-10 lg:w-[44%] lg:py-10"
-    >
-      <HorizontalBars class="absolute left-0 hidden lg:block" />
+      <p class="mb-6 max-w-md text-xs leading-relaxed text-white/90 sm:mb-8 sm:text-sm">
+        Turn what you want to cook into actionable grocery lists. Get AI-powered recipe
+        suggestions, smart shopping intelligence, and purchase insights all in one place.
+      </p>
 
-      <div class="flex items-center gap-3">
-        <span class="font-heading text-lg font-semibold text-black sm:text-xl"
-          >Food Flow</span
-        >
-      </div>
+      <h2 id="waitlist-heading" class="mb-2 text-sm font-bold text-white">
+        Join the Waitlist
+      </h2>
 
-      <DotPattern
-        class="pointer-events-none absolute left-[200px] top-[20px] hidden h-8 w-10 rotate-[8deg] opacity-80 xs:block sm:left-[245px] sm:top-[25px] sm:h-10 sm:w-12"
+      <JoinForm />
+    </article>
+  </section>
+
+  <aside
+    class="bg-background relative flex min-h-[40vh] flex-1 items-center justify-center overflow-hidden px-6 py-12 sm:px-8 sm:py-16 lg:min-h-screen"
+    aria-label="Hero illustration"
+  >
+    <Navigation />
+
+    <Sparkles
+      class="text-secondary pointer-events-none absolute left-1/4 top-28 h-5 w-5"
+      aria-hidden="true"
+    />
+    <Sparkles
+      class="text-secondary/70 pointer-events-none absolute left-[15%] top-44 h-4 w-4"
+      aria-hidden="true"
+    />
+
+    <figure class="relative z-10 w-3/4 max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg">
+      <img
+        src="/food-bowl.png"
+        alt="Colorful vegetables flying into a bowl"
+        class="drop-shadow-xl"
+        loading="eager"
+        fetchpriority="high"
       />
+    </figure>
+  </aside>
 
-      <div class="mt-12 max-w-sm sm:mt-16 lg:mt-20">
-        <h1 class="font-heading text-3xl font-bold leading-tight xs:text-4xl sm:text-5xl">
-          Plan Your<br />
-          Meals Smart
-        </h1>
-        <p class="mt-2 text-base text-primary-100 sm:text-lg">Recipe & Menu Engine</p>
-        <p class="mt-4 text-sm leading-relaxed text-primary-100/80 sm:mt-6 sm:text-xs">
-          Turn what you want to cook into actionable grocery lists. Get AI-powered recipe
-          suggestions, smart shopping intelligence, and purchase insights all in one
-          place.
-        </p>
-        <p class="mt-6 text-sm font-semibold sm:mt-8">Join the Waitlist</p>
-
-        <JoinForm />
-      </div>
-
-      <CurvedLines
-        variant="yellow"
-        class="pointer-events-none absolute bottom-8 left-6 hidden h-20 w-24 xs:block sm:left-10 sm:h-24 sm:w-32"
-      />
-
-      <DotPattern
-        class="pointer-events-none absolute bottom-6 left-32 hidden h-8 w-12 opacity-80 sm:left-40 sm:block sm:h-10 sm:w-16"
-      />
-    </div>
-
-    <div
-      class="flex flex-1 flex-col bg-white px-6 py-8 sm:px-12 lg:bg-transparent lg:py-10"
-    >
-      <div class="flex items-center justify-center lg:justify-start">
-        <Navigation />
-      </div>
-
-      <div class="relative mt-8 flex flex-1 items-center justify-center sm:mt-12">
-        <CurvedLines
-          variant="green"
-          class="pointer-events-none absolute right-4 top-0 hidden h-24 w-24 xs:block sm:right-8 sm:h-32 sm:w-32"
-        />
-
-        <img
-          src="/hero-food-bowl.png"
-          alt="Healthy food bowl with vegetables"
-          class="relative z-10 w-full max-w-[280px] xs:max-w-sm sm:max-w-md"
-        />
-
-        <StarIcon
-          class="pointer-events-none absolute left-16 top-8 hidden h-8 w-8 xs:block sm:left-24 sm:top-10 sm:h-10 sm:w-10"
-        />
-        <StarIcon
-          class="pointer-events-none absolute left-8 top-20 hidden h-6 w-6 xs:block sm:left-14 sm:top-28 sm:h-8 sm:w-8"
-        />
-      </div>
-    </div>
-  </div>
-</section>
+  <CurvedLines
+    variant="green"
+    class="pointer-events-none absolute bottom-0 right-0 hidden h-16 w-16 xs:block sm:h-20 sm:w-20 md:h-24 md:w-24"
+  />
+</div>

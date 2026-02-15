@@ -1,0 +1,17 @@
+---
+interface Props {
+  class?: string;
+}
+
+const { class: className, ...rest } = Astro.props;
+---
+
+<svg
+  class:list={['absolute -bottom-[1px] left-0 w-full h-[60px] lg:hidden', className]}
+  viewBox="0 0 1440 60"
+  preserveAspectRatio="none"
+  xmlns="http://www.w3.org/2000/svg"
+  {...rest}
+>
+  <path d="M0,0 L1440,0 L1440,20 Q720,60 0,20 Z" fill="hsl(120, 50%, 30%)"></path>
+</svg>
