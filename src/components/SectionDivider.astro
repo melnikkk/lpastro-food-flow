@@ -1,0 +1,46 @@
+---
+interface Props {
+  variant?: 'wave' | 'wave-reverse' | 'curve' | 'curve-reverse';
+  topColor: string;
+  bottomColor: string;
+  class?: string;
+}
+
+const { variant = 'wave', topColor, bottomColor, class: className } = Astro.props;
+
+const isWave = variant === 'wave' || variant === 'wave-reverse';
+const isReverse = variant === 'wave-reverse' || variant === 'curve-reverse';
+
+const upperColor = isReverse ? bottomColor : topColor;
+const lowerColor = isReverse ? topColor : bottomColor;
+---
+
+<div
+  class:list={['relative -mt-px w-full overflow-hidden leading-[0]', className]}
+  style={`background: ${lowerColor}`}
+>
+  {
+    isWave ? (
+      <svg
+        class="relative block h-[60px] w-full sm:h-[80px] md:h-[100px]"
+        viewBox="0 0 1440 100"
+        preserveAspectRatio="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M0,0 L0,40 C120,65 240,80 360,70 C480,60 600,25 720,20 C840,15 960,40 1080,50 C1200,60 1320,55 1440,35 L1440,0 Z"
+          fill={upperColor}
+        />
+      </svg>
+    ) : (
+      <svg
+        class="relative block h-[50px] w-full sm:h-[70px] md:h-[90px]"
+        viewBox="0 0 1440 90"
+        preserveAspectRatio="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path d="M0,0 L0,45 Q720,90 1440,45 L1440,0 Z" fill={upperColor} />
+      </svg>
+    )
+  }
+</div>
