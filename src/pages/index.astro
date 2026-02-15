@@ -1,15 +1,30 @@
 ---
+import SectionDivider from '@/components/SectionDivider.astro';
 import Layout from '@/layouts/Layout.astro';
 import FeaturesSection from '@/sections/FeaturesSection.astro';
+import FooterSection from '@/sections/FooterSection.astro';
 import HeroSection from '@/sections/HeroSection.astro';
 import HowItWorksSection from '@/sections/HowItWorksSection.astro';
 import '../styles/global.css';
 ---
 
 <Layout title="Food Flow">
-  <main class="min-h-screen">
-    <HeroSection />
-    <HowItWorksSection />
-    <FeaturesSection />
-  </main>
+  <HeroSection />
+  <HowItWorksSection />
+
+  <SectionDivider
+    variant="wave"
+    topColor="hsl(var(--muted))"
+    bottomColor="hsl(var(--background))"
+  />
+
+  <FeaturesSection />
+
+  <SectionDivider
+    variant="curve-reverse"
+    topColor="hsl(var(--primary))"
+    bottomColor="hsl(var(--background))"
+  />
+
+  <FooterSection />
 </Layout>
