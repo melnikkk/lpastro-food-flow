@@ -1,0 +1,23 @@
+---
+interface Props {
+  title: string;
+  description: string;
+  stepNumber: number;
+  Icon: any;
+}
+
+const { title, description, Icon, stepNumber } = Astro.props;
+---
+
+<div class="flex flex-1 flex-col items-center text-center">
+  <div
+    class="bg-primary text-primary-foreground mb-4 flex h-14 w-14 items-center justify-center rounded-2xl shadow-lg sm:h-16 sm:w-16"
+  >
+    <Icon />
+  </div>
+  <span class="text-secondary mb-1 text-sm font-bold uppercase tracking-widest"
+    >Step {stepNumber}</span
+  >
+  <h4 class="mb-1 text-sm font-bold sm:text-base">{title}</h4>
+  <p class="text-muted-foreground text-xs sm:text-sm">{description}</p>
+</div>
