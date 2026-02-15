@@ -1,0 +1,71 @@
+---
+import Feature from '@/components/Feature.astro';
+import SectionDivider from '@/components/SectionDivider.astro';
+import {
+  CalendarDays,
+  ChefHat,
+  Plug,
+  Receipt,
+  ShoppingCart,
+  Sparkles,
+} from 'lucide-astro';
+
+const FEATURES = [
+  {
+    Icon: ChefHat,
+    title: 'Recipe Management',
+    description: 'Create, save, and reuse custom recipes with ease',
+  },
+  {
+    Icon: CalendarDays,
+    title: 'Menu Planning',
+    description: 'Assemble recipes into weekly menus with portion control',
+  },
+  {
+    Icon: ShoppingCart,
+    title: 'Smart Shopping Lists',
+    description: 'Auto-generate grocery lists from your menu plan',
+  },
+  {
+    Icon: Sparkles,
+    title: 'AI-Powered Suggestions',
+    description: 'Recipe recognition from photos & product recommendations',
+  },
+  {
+    Icon: Receipt,
+    title: 'Receipt Parsing & Insights',
+    description: 'Track purchases and understand spending over time',
+  },
+  {
+    Icon: Plug,
+    title: 'Integrations',
+    description: 'Voice input, fridge sync, and delivery services coming soon',
+  },
+];
+---
+
+<section id="features" class="bg-background relative min-h-screen">
+  <SectionDivider
+    variant="wave"
+    topColor="hsl(var(--muted))"
+    bottomColor="hsl(var(--background))"
+  />
+
+  <div class="container mx-auto px-4 sm:px-6">
+    <h2 class="mb-3 text-center text-2xl font-extrabold sm:text-3xl md:text-4xl">
+      Everything You Neeed
+    </h2>
+    <p class="text-muted-foreground mb-12 text-center text-sm sm:text-base">
+      A complete toolkit for smarter meal planning and grocery shopping
+    </p>
+    <div
+      class="mx-auto grid max-w-5xl grid-cols-1 gap-4 sm:grid-cols-2 sm:gap-6 lg:grid-cols-3"
+    >
+      {
+        FEATURES.map(({ title, description, Icon }) => (
+          <Feature title={title} description={description} Icon={Icon} />
+        ))
+      }
+    </div>
+  </div>
+</section>
