@@ -1,0 +1,42 @@
+---
+import Person from '@/components/Person.astro';
+import { Heart, TrendingUp, Users } from 'lucide-astro';
+
+const PERSONS = [
+  {
+    Icon: Heart,
+    title: 'Home Cooks',
+    description: 'Simplify grocery shopping and meal prep',
+  },
+  {
+    Icon: TrendingUp,
+    title: 'Smart Buyers',
+    description: 'Track purchases and find better deals',
+  },
+  {
+    Icon: Users,
+    title: 'Nutritionists',
+    description: 'Manage client meal plans effortlessly',
+  },
+];
+---
+
+<section
+  id="who"
+  class="bg-muted relative flex min-h-screen flex-col items-center justify-center"
+>
+  <h2 class="mb-3 text-center text-2xl font-extrabold sm:text-3xl md:text-4xl">
+    Built For You
+  </h2>
+  <p class="text-muted-foreground mb-12 text-center text-sm sm:text-base">
+    Whether you cook, shop, or plan nutrition — we&apos;ve got you covered
+  </p>
+
+  <div class="mx-auto grid max-w-2xl grid-cols-1 gap-8 sm:grid-cols-3 sm:gap-6">
+    {
+      PERSONS.map(({ Icon, title, description }) => (
+        <Person Icon={Icon} title={title} description={description} />
+      ))
+    }
+  </div>
+</section>
