@@ -1,0 +1,48 @@
+---
+import Step from '@/components/Step.astro';
+import { ClipboardList, ListChecks, UtensilsCrossed } from 'lucide-astro';
+
+const STEPS = [
+  {
+    title: 'Create Recipes',
+    description: 'Manually or from a library',
+    Icon: UtensilsCrossed,
+  },
+  {
+    title: 'Plan Your Menu',
+    description: 'Organize meals for the week',
+    Icon: ClipboardList,
+  },
+  { title: 'Get Your List', description: 'Shopping list, ready to go', Icon: ListChecks },
+];
+---
+
+<section
+  id="how-it-works"
+  class="bg-muted relative mx-auto flex min-h-screen w-full flex-col items-center justify-center px-6 py-16 sm:px-12 sm:py-20"
+>
+  <div class="mx-auto max-w-7xl">
+    <h2 class="mb-3 text-center text-2xl font-extrabold sm:text-3xl md:text-4xl">
+      How It Works
+    </h2>
+    <p class="text-muted-foreground mb-12 text-center text-sm sm:text-base">
+      Turn what you want to cook into actionable grocery lists.<br /> Get AI-powered recipe
+      suggestions, smart shopping intelligence, and purchase insights all in one place.
+    </p>
+
+    <div
+      class="mx-auto flex max-w-3xl flex-col items-center gap-10 sm:gap-8 md:flex-row md:gap-4"
+    >
+      {
+        STEPS.map(({ title, description, Icon }, index) => (
+          <Step
+            title={title}
+            description={description}
+            Icon={Icon}
+            stepNumber={index + 1}
+          />
+        ))
+      }
+    </div>
+  </div>
+</section>

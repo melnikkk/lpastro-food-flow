@@ -15,9 +15,11 @@
   },
   "dependencies": {
     "@astrojs/cloudflare": "^12.6.12",
+    "@astrojs/ts-plugin": "^1.10.6",
     "astro": "^5.17.1",
     "google-auth-library": "^10.5.0",
     "google-spreadsheet": "^5.0.2",
+    "lucide-astro": "^0.556.0",
     "tailwindcss-animate": "^1.0.7"
   },
   "devDependencies": {

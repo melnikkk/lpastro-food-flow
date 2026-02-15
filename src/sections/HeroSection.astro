@@ -6,7 +6,6 @@ import CurvedLines from '@/components/decorations/CurvedLines.astro';
 import CurvedRightEdge from '@/components/decorations/CurvedRightEdge.astro';
 import DecorativeDots from '@/components/decorations/DecorativeDots.astro';
 import Sparkles from '@/components/decorations/Sparkles.astro';
-import YellowCurves from '@/components/decorations/YellowCurves.astro';
 ---
 
 <div class="relative flex min-h-screen flex-col lg:flex-row">
@@ -17,10 +16,6 @@ import YellowCurves from '@/components/decorations/YellowCurves.astro';
     <CurvedRightEdge aria-hidden="true" />
     <CurvedBottomEdge aria-hidden="true" />
     <DecorativeDots class="absolute left-6 top-6" aria-hidden="true" />
-    <YellowCurves
-      class="pointer-events-none absolute bottom-8 left-8 rotate-[270deg]"
-      aria-hidden="true"
-    />
 
     <article class="relative z-10 max-w-lg">
       <p class="mb-2 text-lg font-bold text-white">Food Decision Engine</p>
@@ -37,9 +32,9 @@ import YellowCurves from '@/components/decorations/YellowCurves.astro';
         suggestions, smart shopping intelligence, and purchase insights all in one place.
       </p>
 
-      <h2 id="waitlist-heading" class="mb-2 text-sm font-bold text-white">
+      <h3 id="waitlist-heading" class="mb-2 text-sm font-bold text-white">
         Join the Waitlist
-      </h2>
+      </h3>
 
       <JoinForm />
     </article>
